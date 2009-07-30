@@ -17,12 +17,15 @@ ARGV.each_with_index do |arg, num|
   when '-b'
     bssid = ARGV[num+1]
     raise "This BSSID looks invalid." unless bssid =~ /^([0-9a-fA-F]{2}\:){5}[0-9a-fA-F]{2}$/
+    exit(0)
   when '-e'
     essid = ARGV[num+1]
     raise "This ESSID doesn't look like a WLAN_XX kind." unless essid =~ /^WLAN_[0-9a-fA-F]{2}$/
+    exit(0)  
   when '-f'
     file = ARGV[num+1]
     raise "File doesn't exist." unless File.exists?(file)
+    exit(0)  
   end
 end
 

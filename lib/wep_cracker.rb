@@ -80,6 +80,7 @@ class WepCracker
       return "X"
     else
       raise "Unfortunately, this BSSID doesn't belong to any of the three supported router models."
+      exit(0)
     end
   end
 
