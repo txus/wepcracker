@@ -1,0 +1,15 @@
+Wep Cracker
+-----------------------
+
+A little script intended to crack Telefonica WEP Keys (the WLAN_XX kind), based on the default key settings on certain models.
+
+NOTE: This script needs aircrack-ng suite to run properly. The airodump capture file must have at least 1 IV to decrypt.
+
+-----------------------
+
+USAGE: ruby crack.rb -b <bssid> -e <essid> -f <airodump_capture_file>
+
+EXAMPLE: ruby crack.rb -b 00:11:22:33:44:55 -e WLAN_0F -f dump-01.cap
+
+Enjoy!
+
