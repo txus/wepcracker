@@ -7,9 +7,9 @@ NOTE: This script needs aircrack-ng suite to run properly. The airodump capture 
 
 -----------------------
 
-USAGE: ruby init.rb -b <bssid> -e <essid> -f <airodump_capture_file>
+USAGE: ruby crack.rb -b <bssid> -e <essid> -f <airodump_capture_file>
 
-EXAMPLE: ruby init.rb -b 00:11:22:33:44:55 -e WLAN_0F -f dump-01.cap
+EXAMPLE: ruby crack.rb -b 00:11:22:33:44:55 -e WLAN_0F -f dump-01.cap
 
 Enjoy!
 
