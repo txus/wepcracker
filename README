@@ -1,7 +1,7 @@
 Wep Cracker
 -----------------------
 
-A little script intended to crack Telefonica WEP Keys (the WLAN_XX kind), based on the default key settings on certain models.
+A little script intended to crack Telefonica WEP Keys (the WLAN_XX kind), based on the default WEP key setting on certain router models.
 
 NOTE: This script needs aircrack-ng suite to run properly. The airodump capture file must have at least 1 IV to decrypt.
 
