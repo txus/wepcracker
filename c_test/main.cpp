@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 #include "lib/wep_cracker.cpp"
 
 using namespace std;
@@ -8,30 +7,54 @@ int main(int argc, char *argv[]) {
 
   string essid, bssid, file;
 
-  for (int n = 1; n < argc; n++) {
-    // cout << "Arg num " << n << ": " << argv[n] << "\n";
-    printf("%s", argv[n]);
+  // Get the options from the given arguments
 
-    /*
-    switch(argv[n])
+  for (int n = 1; n < argc; n++) {
+    
+    string str(argv[n]);
+
+    if (str == "-b")
     {
-      case "-b":
-        bssid = argv[n+1];
+      bssid = argv[n+1];
+    }
+    else if (str == "-e")
+    {
+      essid = argv[n+1];
+    }
+    else if (str == "-f")
+    {
+      file = argv[n+1];
+    }
+
+  }
+
+  // Try to initialize the WepCracker class with given parameters
+
+  try {
+    WepCracker wep_cracker(bssid, essid, file);
+  }
+  catch(int error){
+    switch(error)
+    {
+      case 1:
+        cerr << "The BSSID looks invalid." << endl;
         break;
-      case "-e":
-        essid = argv[n+1];
+      case 2:
+        cerr << "The ESSID looks invalid." << endl;
         break;
-      case "-f":
-        file = argv[n+1];
+      case 3:
+        cerr << "The captures file looks invalid." << endl;
         break;
       default:
         break;
     }
-
-    */
+    return NULL;
   }
 
-  // WepCracker wep_cracker(essid, bssid, file);
+  // If it's all ok, crack!
+
+  //wep_cracker.crack();
+    
   return 0;
 }
 
