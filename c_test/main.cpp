@@ -1,4 +1,5 @@
 #include <iostream>
+#include <boost/regex.hpp>
 #include "lib/wep_cracker.cpp"
 
 using namespace std;
@@ -10,7 +11,7 @@ int main(int argc, char *argv[]) {
   // Get the options from the given arguments
 
   for (int n = 1; n < argc; n++) {
-    
+
     string str(argv[n]);
 
     if (str == "-b")
@@ -30,8 +31,10 @@ int main(int argc, char *argv[]) {
 
   // Try to initialize the WepCracker class with given parameters
 
+  WepCracker wep_cracker;
+
   try {
-    WepCracker wep_cracker(bssid, essid, file);
+    wep_cracker.WepCracker(bssid, essid, file);
   }
   catch(int error){
     switch(error)
@@ -53,8 +56,8 @@ int main(int argc, char *argv[]) {
 
   // If it's all ok, crack!
 
-  //wep_cracker.crack();
-    
+  wep_cracker.crack();
+
   return 0;
 }
 

@@ -4,17 +4,17 @@ class WepCracker {
   string bssid;
   string essid;
   string file;
-  string options;
+  vector <string> options;
 
   public:
+    WepCracker();
     WepCracker(string, string, string);
     int crack();
   private:
-    int validate_attributes();
+    void validate_attributes();
     int generate_options();
     char get_letter_from();
     int sec2hms();
     char* humanize_time();
 };
-
 
