@@ -5,6 +5,9 @@ class WepCracker {
   string essid;
   string file;
   vector<string> options;
+  
+  string start;
+  string end;
 
   public:
     WepCracker();

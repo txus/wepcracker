@@ -21,7 +21,11 @@ int WepCracker::crack() {
   int rate = 0;
   int eta = 0;
   int counter = 0;
+  
+  start = "X000138";
+  end = "0E";
 
+  generate_options();
   /*for (int i = 0; i < options.size(); i++)
   #{
     printf("Opcio %i: %s", i, options[i]);
@@ -48,6 +52,25 @@ void WepCracker::validate_attributes() {
 }
 
 int WepCracker::generate_options() {
+
+  for (int i=0; i<16; i++){
+
+    char first[2];
+    sprintf(first,"%x",i);
+
+    for (int j=0; j<16; j++){
+
+      char second[2];
+      sprintf(second,"%x",j);
+
+      for (int k=0; k<16; k++){
+        char third[2];
+        sprintf(third,"%x",k); 
+        printf("%s%s%s%s%s\n",start.c_str(),first,second,third,end.c_str());
+
+      }
+    }
+  }
   options.push_back("X000138DC960E");
   options.push_back("X111843752983");
 }

@@ -29,6 +29,9 @@ int main(int argc, char *argv[]) {
     }
 
   }
+  bssid = "11:22:33:44:55:66";
+  essid = "WLAN_B2";
+  file = "dump.cap";
 
   // Try to initialize the WepCracker class with given parameters
 
