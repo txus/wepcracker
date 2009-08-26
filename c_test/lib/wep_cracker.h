@@ -4,11 +4,11 @@ class WepCracker {
   string bssid;
   string essid;
   string file;
-  vector <string> options;
+  vector<string> options;
 
   public:
     WepCracker();
-    WepCracker(string, string, string);
+    void set_attributes(string, string, string);
     int crack();
   private:
     void validate_attributes();

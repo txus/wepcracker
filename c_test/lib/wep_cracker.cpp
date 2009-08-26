@@ -4,12 +4,12 @@ using namespace std;
 
 WepCracker::WepCracker() {}
 
-WepCracker::WepCracker (string _bssid, string _essid, string _file) {
+void WepCracker::set_attributes (string _bssid, string _essid, string _file) {
 
   bssid = _bssid;
   essid = _essid;
   file = _file;
-  //printf("Detected bssid %s, essid %s and captures file %s\n", bssid.c_str(), essid.c_str(), file.c_str());
+  printf("Detected bssid %s, essid %s and captures file %s\n", bssid.c_str(), essid.c_str(), file.c_str());
 
   try{ validate_attributes(); }
   catch(int err) { throw err; }

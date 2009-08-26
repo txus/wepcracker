@@ -1,5 +1,6 @@
 #include <iostream>
-#include <boost/regex.hpp>
+#include <vector>
+//#include <boost/regex.hpp>
 #include "lib/wep_cracker.cpp"
 
 using namespace std;
@@ -34,7 +35,7 @@ int main(int argc, char *argv[]) {
   WepCracker wep_cracker;
 
   try {
-    wep_cracker.WepCracker(bssid, essid, file);
+    wep_cracker.set_attributes(bssid, essid, file);
   }
   catch(int error){
     switch(error)
@@ -51,7 +52,7 @@ int main(int argc, char *argv[]) {
       default:
         break;
     }
-    return NULL;
+    return -1;
   }
 
   // If it's all ok, crack!
